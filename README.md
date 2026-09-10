@@ -2,7 +2,7 @@
 
 家計とシフトを管理して、**この先いくら使えるか**を見るためのアプリです。
 
-**→ https://USERNAME.github.io/tedori-local/**
+**→ https://tyautteada2004.github.io/tedori-local/**
 
 スマホのブラウザで開いて、**ホーム画面に追加**して使ってください。
 
