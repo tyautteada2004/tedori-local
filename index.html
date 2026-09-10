@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- viewport-fit=cover で iPhone のノッチ下まで背景を敷く。余白は CSS の env() で確保 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="description" content="家計とシフトを一元管理し、予測残高と純資産を可視化する" />
+
+    <!-- ⚠️ iOS のホーム画面は manifest の icons を見ず、これを使う -->
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+    <link rel="icon" type="image/svg+xml" href="./icon.svg" />
+
+    <!-- ホーム画面から開いたときにブラウザ UI を出さない（iOS は manifest の display を見ない） -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Tedori" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+
+    <meta name="theme-color" content="#fbfaf8" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#16181c" media="(prefers-color-scheme: dark)" />
+
+    <title>Tedori</title>
+    <script type="module" crossorigin src="./assets/index-Z53YPiUh.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-Cx4FBrFA.css">
+  <link rel="manifest" href="./manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="./registerSW.js"></script></head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

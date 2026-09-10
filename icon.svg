@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="18 18 72 72" width="512" height="512" role="img" aria-label="Tedori">
+  <!--
+    ⚠️ **Android のアプリアイコンと同じ絵。** 出どころは
+    `app/src/main/res/drawable/ic_launcher_background.xml`（背景）と
+    `ic_launcher_foreground.xml`（ドーナツ円グラフ）。**片方だけ変えないこと。**
+
+    ⚠️ **viewBox が 0 0 512 512 ではなく 18 18 72 72 なのは意図的。**
+    アダプティブアイコンは 108x108 で描かれ、**実際に見えるのは中央の 72x72** だけ
+    （外側 18dp はマスク用の余白）。この範囲を切り出すことで、
+    ランチャーでの見た目と一致する。おかげで円弧の座標は Android 側と 1 文字も
+    変えずに済んでいる ── 数字を書き換えると、次に見比べたとき差が分からなくなる。
+
+    角丸は 512px 換算で半径 112px（従来の PWA アイコンと同じ割合）。
+    ⚠️ `apple-touch-icon.png` だけは角を丸めない。iOS が自前でマスクするので、
+    先に丸めると透明の角が黒く出る。
+
+    PNG はこの SVG から起こしてある。作り直すには:
+        python tools/render_icon.py .
+  -->
+  <defs>
+    <!-- 背景。Android の angle=315（＝左上→右下）に対応 -->
+    <linearGradient id="bg" x1="18" y1="18" x2="90" y2="90" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1A9A85"/>
+      <stop offset="1" stop-color="#0D6B5A"/>
+    </linearGradient>
+    <clipPath id="round">
+      <rect x="18" y="18" width="72" height="72" rx="15.75"/>
+    </clipPath>
+  </defs>
+
+  <rect x="18" y="18" width="72" height="72" fill="url(#bg)" clip-path="url(#round)"/>
+
+  <!-- ドーナツ円グラフ。中心(54,54) 半径24・線幅13 を3セグメントに分ける -->
+  <g fill="none" stroke-width="13">
+    <path stroke="#FFFFFF" d="M54.84,30.01 A24,24 0 1 1 47.39,77.07"/>
+    <path stroke="#FFFFFF" stroke-opacity="0.761" d="M45.79,76.55 A24,24 0 0 1 30.93,47.39"/>
+    <path stroke="#FFFFFF" stroke-opacity="0.541" d="M31.45,45.79 A24,24 0 0 1 53.16,30.01"/>
+  </g>
+</svg>
